@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		.class2 {
+			background-color: grey;
+			color: white;
+			margin: 2px;
+			padding: 5px;
+		}
+		
+		.class1 {
+			font-size: x-large;
+		}
+	</style>
+	<title>ch 03</title>
+</head>
+<body>
+
+Enter your name: <input disabled>
+Enter your name: <input disabled="">
+Enter your name: <input disabled="disabled">
+Enter your name: <input disabled="true">
+Enter your name: <input disabled="false">
+
+<form>
+	Name: <input accesskey="n" name="name" type="text"/>
+	<p/>
+	Password: <input accesskey="p" name="password" type="password"/>
+	<p/>
+	<input accesskey="s" type="submit" value="Log In"/>
+</form>
+
+<a class="class1 class2" href="http://apress.com">Apress web site</a>
+<p/>
+<a class="class2 otherclass" href="http://w3c.org">W3C web site</a>
+
+<script type="text/javascript">
+	var elems = document.getElementsByClassName("otherclass");
+	for (i = 0; i < elems.length; i++) {
+		var x = elems[i];
+		x.style.border = "thin solid black";
+		x.style.backgroundColor = "white";
+		x.style.color = "black";
+	}
+</script>
+<p contenteditable="true">It is raining right now</p>
+<p dir="rtl">This is right-to-left</p>
+<p dir="ltr">This is left-to-right</p>
+
+<script>
+	var toggleHidden = function () {
+		var elem = document.getElementById("toggle");
+		if (elem.hasAttribute("hidden")) {
+			elem.removeAttribute("hidden");
+		} else {
+			elem.setAttribute("hidden", "hidden");
+		}
+	}
+</script>
+<button onclick="toggleHidden()">Toggle</button>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>City</th>
+	</tr>
+	<tr>
+		<td>Adam Freeman</td>
+		<td>London</td>
+	</tr>
+	<tr hidden id="toggle">
+		<td>Joe Smith</td>
+		<td>New York</td>
+	</tr>
+	<tr>
+		<td>Anne Jones</td>
+		<td>Paris</td>
+	</tr>
+</table>
+
+<p lang="en">Hello - how are you?</p>
+<p lang="fr">Bonjour - comment êtes-vous?</p>
+<p lang="es">Hola - cómo estás?</p>
+
+<textarea spellcheck="true">This is some mispelled text</textarea>
+
+<form>
+	<label>Name: <input name="name" tabindex="1" type="text"/></label>
+	<p/>
+	<label>City: <input name="city" tabindex="-1" type="text"/></label>
+	</p>
+	<label>Country: <input name="country" tabindex="2" type="text"/></label>
+	</p>
+	<input tabindex="3" type="submit"/>
+</form>
+
+<a href="http://apress.com" title="Apress Publishing">Visit the Apress site</a>
+</body>
+</html>

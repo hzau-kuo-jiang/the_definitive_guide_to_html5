@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	
+	<style>
+		body {
+			counter-reset: OuterItemCount 5 InnerItemCount;
+		}
+		
+		#outerlist > li:before {
+			content: counter(OuterItemCount) ". ";
+			counter-increment: OuterItemCount 2;
+		}
+		
+		ul.innerlist > li:before {
+			content: counter(InnerItemCount, lower-alpha) ". ";
+			counter-increment: InnerItemCount;
+		}
+	</style>
+</head>
+<body>
+<pre><code>
+    var fruits = ["apples", "oranges", "mangoes", "cherries"];
+    for (var i = 0; i < fruits.length; i++) {
+        document.writeln("I like " + fruits[i]);
+    }
+        </code></pre>
+<blockquote cite="http://en.wikipedia.org/wiki/Apple">
+	The apple forms a tree that is small and deciduous, reaching 3 to 12 metres
+	(9.8 to 39 ft) tall, with a broad, often densely twiggy crown.
+	<hr>
+	The leaves are alternately arranged simple ovals 5 to 12 cm long and 3–6
+	centimetres (1.2–2.4 in) broad on a 2 to 5 centimetres (0.79 to 2.0 in) petiole
+	with anacute tip, serrated margin and a slightly downy underside. Blossoms are
+	produced in spring simultaneously with the budding of the leaves.
+	<hr>
+	The flowers are white with a pink tinge that gradually fades, five petaled,
+	and 2.5 to 3.5 centimetres (0.98 to 1.4 in) in diameter.
+	The fruit matures in autumn, and is typically 5 to 9 centimetres (
+	2.0 to 3.5 in) in diameter.
+	<hr>
+	The center of the fruit contains five carpels arranged in a five-point star,
+	each carpel containing one to three seeds, called pips.
+</blockquote>
+<p>
+	123
+</p>
+I also like:
+<ol>
+	<li>bananas</li>
+	<li value="4">mangoes</li>
+	<li>cherries</li>
+	<li value="7">plums</li>
+	<li>peaches</li>
+	<li>grapes</li>
+</ol>
+<dl>
+	<dt>Apple</dt>
+	<dd>The apple is the pomaceous fruit of the apple tree</dd>
+	<dd><i>Malus domestica</i></dd>
+	<dt>Banana</dt>
+	<dd>The banana is the parthenocarpic fruit of the banana tree</dd>
+	<dd><i>Musa acuminata</i></dd>
+	<dt>Cherry</dt>
+	<dd>The cherry is the stone fruit of the genus <i>Prunus</i></dd>
+</dl>
+
+<ul id="outerlist" style="list-style-type: none">
+	<li>bananas</li>
+	<li>mangoes, including:</li>
+	<ul class="innerlist">
+		<li>Haden mangoes</li>
+		<li>Keitt mangoes</li>
+		<li>Kent mangoes</li>
+	</ul>
+	<li>cherries</li>
+	<li>plums, including:
+		<ul class="innerlist">
+			<li>Elephant Heart plums</li>
+			<li>Stanley plums</li>
+			<li>Seneca plums</li>
+		</ul>
+	</li>
+	<li>peaches</li>
+	<li>grapes</li>
+</ul>
+
+I like apples and oranges.
+
+<figure>
+	<figcaption>Listing 23. Using the code element</figcaption>
+	<code>var fruits = ["apples", "oranges", "mangoes", "cherries"];<br>
+		document.writeln("I like " + fruits.length + " fruits");
+	</code>
+</figure>
+</body>
+</html>
